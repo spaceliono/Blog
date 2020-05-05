@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+html{
+    font-size: 15px;
+    font-family: 'Times New Roman','KaiTi','Microsoft YaHei';
+}
+a{
+    text-decoration: none;
+}
+
+#home{
+    margin-top: 2.5em;
+}
+#home .img{
+    height: 400px;
+    background: url(../image/5.jpg) no-repeat center;
+    background-size: cover;
+    text-align: center;
+    display: flex; 
+    /* 加display: flex; 子元素加margin:  auto;设置垂直居中 */
+}
+#home .img div{
+    margin: auto;
+    padding: 1em;
+}
+#home .img  .blog_title span{
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 5px 2px 6px #000;
+}
+#home .img  .tab{
+    border-top: 1px solid #8fdfd8;
+}
+#home .img  .tab  span{
+    width: 4rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 1em;
+    background-color: honeydew;
+    border-radius: 3px;
+    color: indigo;
+}
+.container{
+    display : flex;
+    justify-content:center;
+    margin-top: 20px;
+}
+.all_articles{
+    width: 45rem;
+}
+.article_title{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.article_title a{
+    color: #000000;
+    position:relative;
+}
+.article_title a::after{
+    content:''; 
+    display:block; 
+    /*开始时候下划线的宽度为100%*/ 
+    width:100%; 
+    height:1px;
+    position:absolute; 
+    right: 0px;
+    bottom: 0px; 
+    background:#000;
+    
+    transition:all 0.3s ease-in-out; 
+    /*通过transform的缩放scale来让初始时x轴为0*/ 
+    transform: scale3d(0,1,1); 
+    /*将坐标原点移到元素的中间，以原点为中心进行缩放*/ 
+    transform-origin:50% 0; 
+} 
+.article_title a:hover::after{ /*鼠标经过时还原到正常比例*/ 
+    transform:scale3d(1,1,1); 
+}
+.all_articles li{
+    margin: 2rem 0;
+}
+.all_articles li .article_date{
+    font-size: 1.5rem;
+    color: #939393;
+    float: left;
+    text-align: center;
+}
