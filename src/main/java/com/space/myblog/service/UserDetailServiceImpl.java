@@ -35,10 +35,8 @@ public class UserDetailServiceImpl implements UserDetailsService {
     @Override
     public UserEntity loadUserByUsername(String username) throws UsernameNotFoundException {
         // 根据用户名查找用户
-        System.out.println("UserDetailsService - "+username);
         UserEntity user = userMapper.getUserByUsername(username);
         if (user != null) {
-
             //根据用户id获取用户角色
             List<Role> roles = roleMapper.getUserRoleByUserId(user.getId());
             // 填充权限
@@ -48,9 +46,6 @@ public class UserDetailServiceImpl implements UserDetailsService {
             }
             //填充权限菜单
             List<Menu> menus=menuMapper.getRoleMenuByRoles(roles);
-            for(Menu m : menus){
-                System.out.println(m.getMenuUrl());
-            }
             return new UserEntity(username,user.getPassword(),authorities,menus);
         } else {
             System.out.println(username +" not found");

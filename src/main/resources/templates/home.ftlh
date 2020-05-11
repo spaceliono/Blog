@@ -13,17 +13,18 @@
         </div>
     </div>
     <div class="container" id="somewhere">
-        <ul class="all_articles">
+        <div class="all_articles">
 
             <#list articles as article>
-                <li>
-                    <div class = "article_date">${article.create_date}</div>
+                <div class="article_single">
                     <div class="article_title">
                         <a href="/article/${article.article_id}">${article.article_title}</a>
+                    </div>
+                    <div class = "article_date">${article.create_date}</div>
+
                 </div>
-                </li>
             </#list>
-        </ul>
+        </div>
     </div>
 </div>
 </body>
