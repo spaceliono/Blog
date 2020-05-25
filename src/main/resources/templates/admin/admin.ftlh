@@ -5,6 +5,12 @@
             width: 50%;
             margin: 2.5rem auto 0 auto;
         }
+        #new-article{
+            text-align: center;
+            padding: 10px;
+            font-size: 17px;
+            background: #00aaaa;
+        }
         .art_menu{
             height: 40px;
             border-bottom: 1px solid #555;
@@ -31,6 +37,9 @@
 </head>
 
 <div id="showArticles">
+    <div id="new-article">
+        <a href="/admin/editarticle">新建文章</a>
+    </div>
         <#list articles as article>
             <div class="art_menu">
                 <div class="art_connect">

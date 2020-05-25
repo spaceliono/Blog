@@ -15,7 +15,7 @@
     <div id="header">
         <ul id="header_nav">
             <li class="header_menu"><a href="/">Home</a></li>
-            <li class="header_menu"><a href="/#somewhere">Archives</a></li>
+            <li class="header_menu"><a href="/#somewhere">Articles</a></li>
             <li class="header_menu"><a href="">Tags</a></li>
             <li class="header_menu"><a href="">Projects</a></li>
             <li class="header_menu"><a href="/about">About</a></li>

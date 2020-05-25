@@ -7,4 +7,5 @@
 + mysql + mybatis
 + freemarker
 + JQuery.js
++ ehcache/redis实现缓存
 + [editor.md](https://github.com/pandao/editor.md)

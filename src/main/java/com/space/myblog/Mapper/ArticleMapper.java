@@ -10,7 +10,7 @@ public interface ArticleMapper {
     @Delete("delete from articles where article_id=#{article_id}")
     public void delete(int article_id);
 
-    @Select("select article_id,article_title,create_date from articles")
+    @Select("select article_id,article_title,create_date from articles order by create_date desc")
     public List<Article> findAll();
 
     @Select("select * from articles where article_id=#{article_id}")

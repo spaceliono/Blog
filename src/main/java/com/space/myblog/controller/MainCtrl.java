@@ -2,6 +2,7 @@ package com.space.myblog.controller;
 
 import com.space.myblog.Mapper.ArticleMapper;
 import com.space.myblog.pojo.Article;
+import com.space.myblog.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,15 +16,17 @@ public class MainCtrl {
 
     @Autowired
     ArticleMapper articleMapper;
+    @Autowired
+    ArticleService articleService;
     @RequestMapping("/")
     public String index(ModelMap m) {
-        List<Article> articles = articleMapper.findAll();
+        List<Article> articles = articleService.findAll();
         m.addAttribute("articles",articles);
         return "home";
     }
     @RequestMapping("/article/{id}")
     public String edit(@PathVariable("id") int id, ModelMap m) {
-        Article article = articleMapper.get(id);
+        Article article = articleService.get(id);
         Article next =articleMapper.getnext(id);
         Article prev =articleMapper.getprev(id);
         m.addAttribute("article",article);

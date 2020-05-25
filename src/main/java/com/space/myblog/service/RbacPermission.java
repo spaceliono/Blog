@@ -13,8 +13,6 @@ import org.springframework.util.AntPathMatcher;
 
 /**
  * RBAC数据模型控制权限
- * @author charlie
- *
  */
 @Component("rbacPermission")
 public class RbacPermission{

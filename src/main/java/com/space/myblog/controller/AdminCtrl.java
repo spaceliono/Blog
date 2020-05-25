@@ -2,6 +2,7 @@ package com.space.myblog.controller;
 
 import com.space.myblog.Mapper.ArticleMapper;
 import com.space.myblog.pojo.Article;
+import com.space.myblog.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,11 +12,12 @@ import java.util.List;
 
 @Controller
 public class AdminCtrl {
+
     @Autowired
-    ArticleMapper articleMapper;
+    ArticleService articleService;
     @RequestMapping("/admin")
     public String admin(ModelMap m) {
-        List<Article> articles = articleMapper.findAll();
+        List<Article> articles = articleService.findAll();
         m.addAttribute("articles",articles);
         return "admin/admin";
     }
@@ -23,12 +25,12 @@ public class AdminCtrl {
     @RequestMapping("/admin/article_delete/{id}")
     @ResponseBody
     public String articleDelete(@PathVariable("id") int id) {
-        articleMapper.delete(id);
+        articleService.delete(id);
         return "success";
     }
     @RequestMapping("/admin/editarticle/{id}")
     public String articleEdit(@PathVariable("id") int id,ModelMap m){
-        Article article = articleMapper.get(id);
+        Article article = articleService.get(id);
         m.addAttribute("article",article);
         return "admin/editarticle";
     }
@@ -41,11 +43,10 @@ public class AdminCtrl {
     public String saveArticle(Article article){
         int Article_id;
         if ( article.getArticle_id() != 0){
-            articleMapper.updateArt(article);
+            articleService.updateArt(article);
             return "/article/"+ article.getArticle_id();
         }else {
-            Article_id = articleMapper.InsertArt(article);
-            System.out.println(article.getArticle_id());
+            Article_id = articleService.InsertArt(article);
             return "/article/"+ article.getArticle_id();
         }
     }

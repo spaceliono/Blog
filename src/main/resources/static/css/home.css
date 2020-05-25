@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    
+
 }
 html{
     font-size: 15px;
@@ -13,28 +13,48 @@ a{
 
 #home{
     margin-top: 2.5em;
+    display: none;
 }
-#home .img{
-    height: 400px;
-    background: url(../image/5.jpg) no-repeat center;
+#show_info{
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+#home_cover_img{
+    height: 100%;
+    /*background: url(../image/5.jpg);*/
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*animation-name: slideshow--alt;*/
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
     text-align: center;
-    display: flex; 
-    /* 加display: flex; 子元素加margin:  auto;设置垂直居中 */
 }
-#home .img div{
-    margin: auto;
-    padding: 1em;
+@keyframes slideshow--alt{
+
+    100%{
+        opacity:1;
+        transform:scale(1.2);
+    }
 }
-#home .img  .blog_title span{
+#word_info{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    text-align: center;
+}
+.blog_title span{
     font-size: 3rem;
     color: #ffffff;
     text-shadow: 5px 2px 6px #000;
 }
-#home .img  .tab{
-    border-top: 1px solid #8fdfd8;
+.tab{
+    margin-top: 30px;
 }
-#home .img  .tab  span{
+.tab  span{
     width: 4rem;
     font-size: 1rem;
     padding: 0.5rem;

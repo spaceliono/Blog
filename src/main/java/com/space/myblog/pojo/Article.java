@@ -1,6 +1,8 @@
 package com.space.myblog.pojo;
 
-public class Article {
+import java.io.Serializable;
+
+public class Article implements Serializable {
     private int article_id;
     private String article_title;
     private String create_date;

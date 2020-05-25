@@ -3,10 +3,11 @@
     padding: 0;
 }
 html{
+    min-width:850px;
     font-size: 15px;
     font-family: 'Times New Roman', 'KaiTi', 'Microsoft YaHei', serif;
 }
-ul,li{
+.header_menu{
     list-style-type: none;
 }
 #header #header_nav{
