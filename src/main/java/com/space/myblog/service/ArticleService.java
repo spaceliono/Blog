@@ -20,12 +20,10 @@ public class ArticleService {
 
     @Cacheable(key = "'rowall'")
     public List<Article> findAll(){
-        System.out.println("获取全部 的数据");
         return articleMapper.findAll();
     }
     @Cacheable(key = "#id")
     public Article get(int id){
-        System.out.println("获取 id=" + id + " 的数据");
         return articleMapper.get(id);
     }
     @CachePut(key = "#article.article_id")

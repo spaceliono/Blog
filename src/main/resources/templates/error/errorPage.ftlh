@@ -1,4 +1,4 @@
-<#include "./head.ftlh">
+<#include "../head.ftlh">
 <head>
     <style>
         #error-container{
@@ -11,7 +11,12 @@
 </head>
 <body>
 <div id="error-container">
-    <h1>403 Forbidden</h1>
+    <#if errorCode??>
+    <h1>${errorCode}</h1>
+    </#if>
+    <#if errorMsg??>
+        <p>${errorMsg}</p>
+    </#if>
 </div>
 </body>
 </html>
